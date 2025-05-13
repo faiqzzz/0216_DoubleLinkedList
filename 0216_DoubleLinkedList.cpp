@@ -49,8 +49,8 @@ void addNode ()
         newNode->prev = NULL; // step 5: make the new node point to NULL
         START = newNode;      // step 6: make the new node the first node
     }   
-    // kondisi jika semua kondisi if tidak terpenuhi
-    else
+        // kondisi jika semua kondisi if tidak terpenuhi
+        else
     {
 
 
@@ -66,16 +66,21 @@ void addNode ()
             current = current->next; // step 1.e : move the current to the next             
         }
     
-    // set nilai next node baru = current dan prev node baru == previous
-    newNode->next = current;    // step 4: Make the next field of the new node
-    newNode->prev = previous;   // step 5: Make the previous field of the new node    
+        // set nilai next node baru = current dan prev node baru == previous
+        newNode->next = current;    // step 4: Make the next field of the new node
+        newNode->prev = previous;   // step 5: Make the previous field of the new node    
     
-    // kondisi jika current tidak sama dengan null
-    if (current != NULL)
+        // kondisi jika current tidak sama dengan null
+        if (current != NULL)
         {
             current->prev = newNode; // step 6: Make the previous field of the
         }
 
+        // kondisi jika previous tidak sama dengan NULL
+        if (previous != NULL)
+        {
+            previous->next = newNode; // step 7: Make the next field of the previous
+        }
         
     }
 
