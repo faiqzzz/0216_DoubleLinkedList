@@ -151,9 +151,36 @@ void deleteNode()
               current->next->prev = previous;  
         }
     }
-    
 
+    //relase the memory of the nodemarked as current
+    delete current;
+    cout << "\x1b[32mRecord with roll number " << rollNo << "deleted\x1b[0m" << endl;
+}
+
+// method untuk mengecek apakah list kosong
+bool listEmpty() 
+{
+    return (START == NULL);
+}
+
+//prosedur traverse untuk menampilkan data secara urut
+void traverse()
+{
+    if (listEmpty())
+        cout << "\nList is empty" << endl;
+    else 
+    {
+        cout << "\nRecords in ascending order of roll number are:" << endl;
+        Node *currentNode = START; // step 1
+        while (currentNode != NULL) // step 2
+        {
+            cout << currentNode->noMhs << " " << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
 
 }
+
+
 
 
